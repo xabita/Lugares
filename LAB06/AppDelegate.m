@@ -17,6 +17,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    maNames         =  [NSMutableArray arrayWithObjects: nil];
+    maImgs          =  [NSMutableArray arrayWithObjects: nil];
+    maAddress           =  [NSMutableArray arrayWithObjects: nil];
+    
     return YES;
 }
 

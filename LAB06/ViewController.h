@@ -7,9 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <iAd/iAd.h>
+#import <Accounts/Accounts.h>
 
-@interface ViewController : UIViewController
 
+@interface ViewController : UIViewController <UIApplicationDelegate, ADBannerViewDelegate, UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
+{
+    ADBannerView *adView;
+    BOOL bannerIsVisible;
+}
+
+@property (strong, nonatomic) IBOutlet UITableView *tblMain;
+
+- (IBAction)btnRefresh:(id)sender;
 
 @end
 
