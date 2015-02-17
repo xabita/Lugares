@@ -26,9 +26,10 @@ UIAlertView     *alert;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-     [self cfgiAdBanner];
+    [self cfgiAdBanner];
     [self initController];
-    [self postService];
+    [self loadService];
+//    [self postService];
     
     
 }
@@ -284,16 +285,7 @@ UIAlertView     *alert;
     
     maImgs        = [jsonResponse valueForKey:@"url_imagen"];
     NSLog(@"maImgs %@", maImgs);
-    
-  //  maRole        = [jsonResponse valueForKey:@"Surname"];
-  //  NSLog(@"maRole %@", maRole);
-    
- //   maAge        = [jsonResponse valueForKey:@"Age"];
-  //  NSLog(@"maAge %@", maAge);
-    
-    
-    
-    //[self.tblMain reloadData];
+
 }
 
 

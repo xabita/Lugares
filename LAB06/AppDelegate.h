@@ -12,6 +12,8 @@ NSMutableArray *maNames;
 NSMutableArray *maImgs;
 NSMutableArray *maAddress;
 
+NSMutableArray *maLatitud;
+NSMutableArray *maLongitud;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

@@ -20,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *tblMain;
 
 - (IBAction)btnRefresh:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *btnMapa;
 
 @end
 

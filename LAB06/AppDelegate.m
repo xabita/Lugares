@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import <GoogleMaps/GoogleMaps.h>
+
 @interface AppDelegate ()
 
 @end
@@ -21,7 +23,10 @@
     maNames         =  [NSMutableArray arrayWithObjects: nil];
     maImgs          =  [NSMutableArray arrayWithObjects: nil];
     maAddress           =  [NSMutableArray arrayWithObjects: nil];
+    maLatitud         =  [NSMutableArray arrayWithObjects: nil];
+    maLongitud          =  [NSMutableArray arrayWithObjects: nil];
     
+[GMSServices provideAPIKey:@"AIzaSyCOvZlVj3Krt196LGdw8CmRgZv3OMwXRjg"];
     return YES;
 }
 
