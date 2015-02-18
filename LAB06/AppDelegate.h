@@ -11,6 +11,7 @@
 NSMutableArray *maNames;
 NSMutableArray *maImgs;
 NSMutableArray *maAddress;
+NSMutableArray *maTime;
 
 NSMutableArray *maLatitud;
 NSMutableArray *maLongitud;

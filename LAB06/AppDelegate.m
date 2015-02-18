@@ -25,6 +25,8 @@
     maAddress           =  [NSMutableArray arrayWithObjects: nil];
     maLatitud         =  [NSMutableArray arrayWithObjects: nil];
     maLongitud          =  [NSMutableArray arrayWithObjects: nil];
+    maTime          =  [NSMutableArray arrayWithObjects: nil];
+   
     
 [GMSServices provideAPIKey:@"AIzaSyCOvZlVj3Krt196LGdw8CmRgZv3OMwXRjg"];
     return YES;

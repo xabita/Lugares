@@ -52,8 +52,9 @@ int i;
         
         marker.position = CLLocationCoordinate2DMake([maLatitud[i] floatValue], [maLongitud[i] floatValue]);
         marker.title = maNames[i];
-        marker.snippet = @"Australia";
+        marker.snippet = maTime[i];
         marker.map = mapView_;
+    
     }
 
     /*// Creates a marker in the center of the map.
@@ -205,6 +206,15 @@ int i;
     
     maLongitud        = [jsonResponse valueForKey:@"longitud"];
     NSLog(@"maLongitud %@", maLongitud);
+    
+    maAddress        = [jsonResponse valueForKey:@"direccion"];
+    NSLog(@"maAddress %@", maAddress);
+
+    
+    maTime        = [jsonResponse valueForKey:@"horario"];
+    NSLog(@"maTime %@", maTime);
+    
+ 
     
 }
 
