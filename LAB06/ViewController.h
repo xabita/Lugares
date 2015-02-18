@@ -21,6 +21,7 @@
 
 - (IBAction)btnRefresh:(id)sender;
 @property (strong, nonatomic) IBOutlet UIButton *btnMapa;
+@property (strong, nonatomic) IBOutlet UIButton *btnMap;
 
 @end
 

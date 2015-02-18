@@ -11,7 +11,7 @@
 #import <Accounts/Accounts.h>
 
 
-@interface MapaViewController : UIViewController <UIApplicationDelegate, ADBannerViewDelegate, UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
+@interface MapaViewController : UIViewController <UIApplicationDelegate, ADBannerViewDelegate, UIAlertViewDelegate>
 {
     ADBannerView *adView;
     BOOL bannerIsVisible;

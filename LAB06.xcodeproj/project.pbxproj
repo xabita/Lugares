@@ -44,6 +44,7 @@
 		2659D5CE1A8F198D00431517 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2659D5CC1A8F198D00431517 /* LaunchScreen.xib */; };
 		2659D5DA1A8F198D00431517 /* LAB06Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2659D5D91A8F198D00431517 /* LAB06Tests.m */; };
 		2659D5E41A8F1AC200431517 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2659D5E31A8F1AC200431517 /* iAd.framework */; };
+		266D4BCE1A945E2600C2841C /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 266D4BCD1A945E2600C2841C /* MapViewController.m */; };
 		26F645C11A8F313000C5028C /* CellLugar.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F645C01A8F313000C5028C /* CellLugar.m */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +116,8 @@
 		2659D5D81A8F198D00431517 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2659D5D91A8F198D00431517 /* LAB06Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LAB06Tests.m; sourceTree = "<group>"; };
 		2659D5E31A8F1AC200431517 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		266D4BCC1A945E2600C2841C /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		266D4BCD1A945E2600C2841C /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		26F645BF1A8F313000C5028C /* CellLugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellLugar.h; sourceTree = "<group>"; };
 		26F645C01A8F313000C5028C /* CellLugar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellLugar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -227,6 +230,8 @@
 			children = (
 				2659D5C11A8F198D00431517 /* AppDelegate.h */,
 				2659D5C21A8F198D00431517 /* AppDelegate.m */,
+				266D4BCC1A945E2600C2841C /* MapViewController.h */,
+				266D4BCD1A945E2600C2841C /* MapViewController.m */,
 				2659D5C41A8F198D00431517 /* ViewController.h */,
 				2659D5C51A8F198D00431517 /* ViewController.m */,
 				26004AF41A93187600F5954B /* MapaViewController.h */,
@@ -378,6 +383,7 @@
 				2659D5C61A8F198D00431517 /* ViewController.m in Sources */,
 				26F645C11A8F313000C5028C /* CellLugar.m in Sources */,
 				262B10D21A8F24EA00551741 /* SBJsonWriter.m in Sources */,
+				266D4BCE1A945E2600C2841C /* MapViewController.m in Sources */,
 				2659D5C31A8F198D00431517 /* AppDelegate.m in Sources */,
 				262B10D01A8F24EA00551741 /* SBJsonTokeniser.m in Sources */,
 				262B10C71A8F24EA00551741 /* NSObject+SBJson.m in Sources */,
