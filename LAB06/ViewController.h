@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
 #import <Accounts/Accounts.h>
+#import "GAITrackedViewController.h"
 
 
-@interface ViewController : UIViewController <UIApplicationDelegate, ADBannerViewDelegate, UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
+@interface ViewController : GAITrackedViewController <UIApplicationDelegate, ADBannerViewDelegate, UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
 {
     ADBannerView *adView;
     BOOL bannerIsVisible;

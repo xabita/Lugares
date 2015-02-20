@@ -40,5 +40,9 @@
 	<string>Localizandote</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Para darte informacion de interes</string>
+	<key>Pushwoosh_APPID</key>
+	<string>17868-60813</string>
+	<key>Pushwoosh_AUTO</key>
+	<string>no</string>
 </dict>
 </plist>

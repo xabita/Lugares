@@ -29,6 +29,7 @@ UIAlertView     *alert;
     [self cfgiAdBanner];
     [self initController];
     [self loadService];
+     self.screenName = @"Lugares view1";
 //    [self postService];
     
     
@@ -105,6 +106,14 @@ UIAlertView     *alert;
 
 /***********       fin banner ***********/
 
+
+
+
+/* analytics*/
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.screenName = @"Lugares view1";
+}
 
 
 

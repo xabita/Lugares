@@ -8,10 +8,17 @@
 
 #import "AppDelegate.h"
 #import <GoogleMaps/GoogleMaps.h>
+#import <Pushwoosh/PushNotificationManager.h>
+#import "GAI.h"
 
-@interface AppDelegate ()
+#define LOCATIONS_FILE @"PWLocationTracking"
+#define LOCATIONS_FILE_TYPE @"log"
 
+@interface AppDelegate ()<PushNotificationDelegate> {
+    PushNotificationManager *pushManager;
+}
 @end
+
 
 @implementation AppDelegate
 
@@ -25,7 +32,57 @@
     maLatitud         =  [NSMutableArray arrayWithObjects: nil];
     maLongitud          =  [NSMutableArray arrayWithObjects: nil];
     maTime          =  [NSMutableArray arrayWithObjects: nil];
+
+    
+    
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)])
+    {
+        // use registerUserNotificationSettings
+        // iOS 8 Notifications
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+        
+        [application registerForRemoteNotifications];
+    } else
+    {
+        // use registerForRemoteNotifications
+    }
+#else
+    // use registerForRemoteNotifications
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
+#endif
+    
+    pushManager = [PushNotificationManager pushManager];
+    pushManager.delegate = self;
+    [pushManager handlePushReceived:launchOptions];
+    
+    if ([launchOptions objectForKey:UIApplicationLaunchOptionsLocationKey]) {
+        
+        [pushManager startLocationTracking];
+    }
+    
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+    
    
+    
+    
+    /*Analytics*/
+
+    // Optional: automatically send uncaught exceptions to Google Analytics.
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    
+    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+    [GAI sharedInstance].dispatchInterval = 20;
+    
+    // Optional: set Logger to VERBOSE for debug information.
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    
+    // Initialize tracker. Replace with your tracking ID.
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-59436043-2"];
+
+    
+    
+    
     
 [GMSServices provideAPIKey:@"AIzaSyCOvZlVj3Krt196LGdw8CmRgZv3OMwXRjg"];
     return YES;
@@ -135,5 +192,48 @@
         }
     }
 }
+
+
+
+/*      push    */
+
+#pragma mark - Push Notification Manager
+
+- (void)onDidRegisterForRemoteNotificationsWithDeviceToken:(NSString *)token
+{
+    NSLog(@"Registered with push token: %@", token);
+}
+
+- (void)onDidFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    NSLog(@"Failed to register: %@", [error description]);
+}
+
+- (void)onPushAccepted:(PushNotificationManager *)pushManager withNotification:(NSDictionary *)pushNotification
+{
+    [PushNotificationManager clearNotificationCenter];
+    
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    
+    NSLog(@"Received push notification: %@", pushNotification);
+    
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    [pushManager handlePushReceived:userInfo];
+}
+
+- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
+{
+    [pushManager handlePushRegistration:deviceToken];
+    NSString *mstrUserPushToken;
+    mstrUserPushToken   = [[deviceToken description] stringByTrimmingCharactersInSet: [NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+    mstrUserPushToken   = [mstrUserPushToken stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSLog(@"mstrUserPushToken %@", mstrUserPushToken);
+}
+
+
+
 
 @end
