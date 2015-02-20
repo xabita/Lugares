@@ -14,7 +14,7 @@
 #import <GoogleMaps/GoogleMaps.h>
 
 
-@interface MapViewController : UIViewController<UIApplicationDelegate, ADBannerViewDelegate,CLLocationManagerDelegate, GMSMapViewDelegate>
+@interface MapViewController : UIViewController<UIApplicationDelegate, ADBannerViewDelegate,CLLocationManagerDelegate, GMSMapViewDelegate, UIAlertViewDelegate>
 {
     ADBannerView *adView;
     BOOL bannerIsVisible;
@@ -27,6 +27,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *btnMapa;
 @property (strong, nonatomic) IBOutlet UIView *viewMap;
 
+- (IBAction)btnIr:(id)sender;
 
 - (IBAction)btnMapa:(id)sender;
 
