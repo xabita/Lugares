@@ -114,7 +114,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Q9q-2t-xrI">
-                                <rect key="frame" x="44" y="26" width="33" height="30"/>
+                                <rect key="frame" x="0.0" y="26" width="106" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Lista">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -123,13 +123,8 @@
                                     <segue destination="vXZ-lx-hvc" kind="modal" id="6Mi-Lz-JMG"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" id="qbJ-7G-1bN">
-                                <rect key="frame" x="0.0" y="81" width="320" height="406"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="V2k-fg-aJg">
-                                <rect key="frame" x="230" y="26" width="30" height="30"/>
+                                <rect key="frame" x="197" y="26" width="85" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Ir">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -139,7 +134,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TdW-o3-pTN">
-                                <rect key="frame" x="101" y="26" width="65" height="30"/>
+                                <rect key="frame" x="101" y="26" width="109" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Ver Mapa">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -148,6 +143,11 @@
                                     <action selector="btnMapa:" destination="Dno-jk-x9I" eventType="touchUpInside" id="spW-xe-0NO"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" id="qbJ-7G-1bN">
+                                <rect key="frame" x="0.0" y="56" width="320" height="455"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

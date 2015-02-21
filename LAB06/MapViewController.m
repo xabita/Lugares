@@ -9,6 +9,7 @@
 #import "MapViewController.h"
 #import "SBJson.h"
 #import "AppDelegate.h"
+#import <MapKit/MapKit.h>
 
 NSDictionary    *jsonResponse;
 NSString    *userID;
@@ -19,6 +20,8 @@ float       mlatitude;
 float       mlongitude;
 
 GMSMapView *mapView;
+float latitud_sel;
+float longitud_sel;
 
 
 @interface MapViewController(){
@@ -174,7 +177,7 @@ GMSMapView *mapView;
     // Creates a marker in the center of the map.
     GMSMarker *marker = [[GMSMarker alloc] init];
     marker.position = CLLocationCoordinate2DMake(mlatitude, mlongitude);
-    marker.title = @"Master UAG";
+    marker.title = @"Ubicacion Actual";
     marker.snippet = @"A punto de salir!";
     marker.map = mapView;
     [self.viewMap addSubview:mapView];
@@ -186,8 +189,10 @@ GMSMapView *mapView;
         marker1.title = maNames[i];
         marker1.snippet = maTime[i];
         marker1.map = mapView;
+        marker1.tappable = YES;
         
     }
+    mapView.delegate = self;
 }
 
 
@@ -263,33 +268,31 @@ GMSMapView *mapView;
     
 }
 
--(void) mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker *)marker
+
+
+
+
+- (void) mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker *)marker {
+    
+    NSLog(@"info window tapped");
+    CLLocationCoordinate2D location = CLLocationCoordinate2DMake(marker.layer.latitude,marker.layer.longitude);
+    
+    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:location addressDictionary:nil];
+    MKMapItem *item = [[MKMapItem alloc] initWithPlacemark:placemark];
+    item.name = marker.title;
+    [item openInMapsWithLaunchOptions:nil];
+
+}
+- (BOOL) mapView:(GMSMapView *)mapView didTapMarker:(GMSMarker *)marker
 {
+    NSLog(@"%@", marker.description);
+    //    show info window
+    [mapView setSelectedMarker:marker];
+    return YES;
     
-    NSString *message=[NSString stringWithFormat:@"hola mapa %@marker", marker.title];
-
-   UIAlertView *windowTapped=[[UIAlertView alloc]
-                              initWithTitle:@"Info Window Tapped!"
-                              message:message
-                              delegate:nil
-                              cancelButtonTitle:@"Alright!"
-                              otherButtonTitles:nil];
-    [windowTapped show];
     
-                              
 }
 
-
-
-- (IBAction)btnIr:(id)sender {
-    NSString *url = [NSString stringWithFormat:@"https://www.google.com.mx/maps/dir/%f,%f/17.0767621,-96.7641893/", mlatitude, mlongitude];
-                     
-   // NSLog(@"URLLOCATION---- :%@", url);
-    
-    if (!application) application =   [UIApplication sharedApplication];
-                                          [application  openURL:
-                                           [NSURL URLWithString:url ]];
-}
 
 - (IBAction)btnMapa:(id)sender {
      [self paintMap];
