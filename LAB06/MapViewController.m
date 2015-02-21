@@ -169,7 +169,7 @@ float longitud_sel;
     // coordinate -33.86,151.20 at zoom level 6.
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:mlatitude
                                                             longitude:mlongitude
-                                                                 zoom:10];
+                                                                 zoom:15];
     mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     mapView.frame = CGRectMake(0, 0, self.viewMap.frame.size.width, self.viewMap.frame.size.height);
     mapView.myLocationEnabled = YES;
@@ -194,9 +194,6 @@ float longitud_sel;
     }
     mapView.delegate = self;
 }
-
-
-
 
 - (void) loadService
 {

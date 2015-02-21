@@ -159,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Afx-Ov-lyX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="196" y="1014"/>
+            <point key="canvasLocation" x="533" y="987"/>
         </scene>
         <!--Mapa View Controller-->
         <scene sceneID="P4g-Va-c2t">
